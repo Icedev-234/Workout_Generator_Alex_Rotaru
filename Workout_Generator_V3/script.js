@@ -98,7 +98,7 @@ p{
 //userlist
 
 $(document).on('click', '#user_list', function(){
-     
+    $('#Listing').show();
     var html = `
 
     <style>
@@ -322,7 +322,7 @@ transition:0.5s ease;
 <span>S</span>
 <span>
 </h1>
-<form action="./index.php" method="POST">
+<form action="./index.php" method="POST" id="last">
 <div class="Form">
 <div class="Input">
   <label>Username</label>
@@ -349,11 +349,14 @@ transition:0.5s ease;
     $('#content').html(html);
 });
 
+$(document).on('submit','last',function(){
 
+    showLoggedInMenu();
+});
 
     // show sign up / registration form
     $(document).on('click', '#sign_up', function(){
-     
+        $('#Listing').hide();
         var html = `
 
         <style>
@@ -612,7 +615,7 @@ h1 span:nth-child(8){
 
  // submit form data to api
     $.ajax({
-     url: "http://localhost/Workout_Generator_V2/api/create_user.php",
+     url: "http://localhost/Workout_Generator_V3/api/create_user.php",
      type : "POST",
      contentType : 'application/json',
      data : form_data,
@@ -638,6 +641,7 @@ h1 span:nth-child(8){
  
     // show login form
 $(document).on('click', '#login', function(){
+    $('#Listing').hide();
     showLoginPage();
 });
  
@@ -895,7 +899,7 @@ $(document).on('submit', '#login_form', function(){
 
    // submit form data to api
 $.ajax({
-    url: "http://localhost/Workout_Generator_V2/Login.php",
+    url: "http://localhost/Workout_Generator_V3/Login.php",
     type : "POST",
     contentType : 'application/json',
     data : form_data,
@@ -921,6 +925,7 @@ $.ajax({
 
 // show home page
 $(document).on('click', '#home', function(){
+    $('#Listing').hide();
     showHomePage();
     clearResponse();
 });
@@ -1007,10 +1012,10 @@ function showLoggedOutMenu(){
  
 // show home page
 function showHomePage(){
- 
+    $('#Listing').hide();
  // validate jwt to verify access
  var jwt = getCookie('jwt');
- $.post("http://localhost/Workout_Generator_V2/api/validate_token.php", JSON.stringify({ jwt:jwt })).done(function(result) {
+ $.post("http://localhost/Workout_Generator_V3/api/validate_token.php", JSON.stringify({ jwt:jwt })).done(function(result) {
 
       // if valid, show homepage
 var html = `
@@ -1340,21 +1345,235 @@ function showUpdateAccountForm(){
  
         // if response is valid, put user details in the form
 var html = `
-        <h2>Update Account</h2>
-        <form id='update_account_form'>
-            <div class="form-group">
+<style>
+.wrapper{
+max-width: 500px;
+width:450px;
+text-align: center;
+background:rgb(43, 35, 121,0.6);
+
+color:white;
+margin:20px auto;
+padding:30px;
+box-shadow:1px 1px 2px rgba(0,0,0,0.125);
+
+}
+
+.wrapper h1{
+position:relative;
+text-align: center;
+align-items: center;
+font-size:3em;
+color:#333;
+font-family:sans-serif;
+font-weight: 500;
+text-transform: uppercase;
+letter-spacing: 3px;
+display: inline-block;
+}
+a{
+font-size: 2em;
+color:#fec107;
+font-family:sans-serif;
+}
+
+h1 span{
+animation:light 1.1s linear infinite;
+text-align: center;
+}
+
+h1 span:nth-child(1){
+animation-delay: 0s;
+}
+h1 span:nth-child(2){
+animation-delay: 0.2s;
+}
+h1 span:nth-child(3){
+animation-delay: 0.4s;
+}
+h1 span:nth-child(4){
+animation-delay: 0.6s;
+}
+h1 span:nth-child(5){
+animation-delay: 0.8s;
+}
+h1 span:nth-child(6){
+animation-delay: 1.0s;
+}
+
+@keyframes light{
+0%,80%{
+color:#333;
+text-shadow:none;
+}
+100%{
+color:white;
+text-shadow: 0 0 10px white,
+             0 0 20px white,
+             0 0 40px white,
+             0 0 80px white,
+             0 0 120px white,
+             0 0 160px white;
+}
+
+}
+
+.wrapper .Form{
+width:100%;
+
+}
+.wrapper .Form .Input{
+margin-bottom: 15px;
+display:inline-block;
+align-items: center;
+
+}
+
+.wrapper .Form .Input{
+width:200px;
+color:#ffffff;
+margin-right: 10px;
+font-size:14px;
+}
+
+.wrapper .Form .Input .input{
+width:100%;
+outline:none;
+border:1px solid #d5dbd9;
+font-size: 15px;
+padding:8px 10px;
+border-radius:3px;
+transition:all 0.3s ease;
+
+}
+
+.wrapper .Form .Input .Gender_select{
+position:relative;
+width:100%;
+height:37px;
+}
+
+.wrapper .Form .Input .Gender_select select{
+-webkit-appearance: none;
+appearance: none;
+border:1px solid #d5dbd9;
+width:100%;
+height:100%;
+padding:8px 10px;
+border-radius: 3px;
+}
+
+.wrapper .Form .Input .Gender_select:before{
+content:"";
+position:absolute;
+top:10px;
+right:12px;
+border:8px solid;
+border-color:#d5dbd9 transparent transparent transparent;
+pointer-events: none;
+}
+
+.wrapper .Form .Input .input:focus,
+.wrapper .Form .Input .input select:focus{
+border:1px solid #fec107;
+}
+
+.wrapper .Form .Input p{
+font-size:14px;
+color:#757575;
+}
+
+.wrapper .Form .Input .check{
+width:15px;
+height:15px;
+position:relative;
+display:block;
+cursor:pointer;
+
+
+}
+
+.wrapper .Form .Input .check input[type="checkbox"]{
+position:absoulte;
+top:0;
+left:0;
+opacity: 0;
+
+
+}
+
+.wrapper .Form .Input .check .checkmark{
+width:15px;
+height:15px;
+border:1px solid #fec107;
+display:block;
+position: relative;
+background:#fec107;
+
+
+}
+
+.wrapper .Form .Input .check .checkmark:before{
+content:"";
+position: absolute;
+top:0;
+left:0;
+width:5px;
+height: 5px;
+border: 2px solid
+border-color #fff #fff #fff #fff;
+transform: rotate(-45deg);
+
+
+}
+
+.wrapper .Form .Input .btn{
+width:100%;
+padding:8px 10px;
+font-size:15px;
+border:0;
+background:crimson;
+color:white;
+cursor:pointer;
+border-radius:3px;
+
+
+}
+
+.wrapper .Form .Input .btn:hover{
+background-color: rgb(73, 48, 90);
+transition:0.5s ease;
+}
+
+
+</style>
+
+<div class="wrapper">
+
+<h1 id="text">
+<span>T</span>
+<span>R</span>
+<span>A</span>
+<span>I</span>
+<span>N</span>
+<span>I</span>
+<span>N</span>
+<span>G</span>
+</h1>
+        <form id='update_account_form' action="#">
+            <div class="Input" >
                 <label for="firstname">Username</label>
-                <input type="text" class="form-control" name="firstname" id="username" required value="` + result.data.firstname + `" />
+                <input type="text" class="input" name="firstname" id="username" required value="` + result.data.firstname + `" />
             </div>
  
-            <div class="form-group">
+            <div class="Input">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" required value="` + result.data.email + `" />
+                <input type="email" class="input" name="email" id="email" required value="` + result.data.email + `" />
             </div>
  
-            <div class="form-group">
+            <div class="Input">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" id="password" />
+                <input type="password" class="input" name="password" id="password" />
             </div>
  
             <button type='submit' onclick="showLoggedInMenu()" class='btn btn-primary'>
