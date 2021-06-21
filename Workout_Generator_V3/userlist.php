@@ -31,7 +31,7 @@ if(isset($_POST['List']))
           }
       }
       
-      $sql="SELECT * FROM logged_user ORDER BY activity";
+      $sql="SELECT * FROM logged_user ORDER BY activity DESC";
       $result=mysqli_query($db,$sql);
       
       echo "<table border='1'>
