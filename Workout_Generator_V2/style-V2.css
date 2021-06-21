@@ -1,0 +1,252 @@
+@import url('https://font.googleapis.com/css?family=Bad+Script');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {  
+  background-image: url("./images/Background_V2.jpg");
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+nav {
+  width: 100%;
+  background-color: #333;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#home{
+  display: none;
+}
+#logout{
+  display: none;
+}
+#update_account{
+  display:none;
+}
+#user_list{
+  display:none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a black background color to the top navigation */
+.other_op {
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+/* Style the links inside the navigation bar */
+.other_op a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.other_op a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+        
+
+
+
+#main-form {
+    width: 100%;
+    margin: 5em 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .options {
+    display: flex;
+    justify-content: space-around;
+  }
+  label {
+    margin: 0.5em;
+    display: flex;
+    height: 2.5em;
+  }
+  label span {
+    text-align: center;
+    width: 50%;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: white;
+  }
+  input {
+    width: 50%;
+    border-radius: 0.5em;
+    border: none;
+    text-align: center;
+  }
+  
+  select {
+    border-radius: 0.5em;
+  }
+  
+  .example-photo {
+    border: 1px solid #ddd;
+    border-radius: 0.4px;
+    padding: 0.4px;
+    width: 20em;
+  }
+  
+  .example-photo :hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+
+ #submit-btn {
+    width: 7em;
+    height: 3em;
+    border-radius: 1.5em;
+    border: none;
+    background-color: #5cbc76;
+    color: #eeeef1;
+    font-size: large;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: auto;
+  }
+  #submit-btn:hover {
+    color: #5cbc76;
+    background-color: #eeeef1;
+  }
+
+h3{
+   margin:0;
+   padding:0;
+   justify-content: center;
+   font-family:'Bad Script',cursive;
+   color:#111;
+   font-size: 4em;
+ }
+
+ h3 span{
+   display:table-cell;
+   margin:0;
+   padding:0;
+   animation: animate 4.25s linear infinite;
+   
+ }
+
+ h3 span:nth-child(1)
+ {
+   animation-delay: 0s;
+ }
+ h3 span:nth-child(2)
+ {
+   animation-delay: 0.25s;
+ }
+ h3 span:nth-child(3)
+ {
+   animation-delay: 0.5s;
+ }
+ h3 span:nth-child(4)
+ {
+   animation-delay: 0.75s;
+ }
+ h3 span:nth-child(5)
+ {
+   animation-delay: 1s;
+ }
+ h3 span:nth-child(6)
+ {
+   animation-delay: 1.25s;
+ }
+ h3 span:nth-child(7)
+ {
+   animation-delay: 1.5s;
+ }
+ h3 span:nth-child(8)
+ {
+   animation-delay: 1.75s;
+ }
+ h3 span:nth-child(9)
+ {
+   animation-delay: 2s;
+ }
+ h3 span:nth-child(10)
+ {
+   animation-delay: 2.25s;
+ }
+ h3 span:nth-child(11)
+ {
+   animation-delay: 2.5s;
+ }
+ h3 span:nth-child(12)
+ {
+   animation-delay: 2.75s;
+ }
+ h3 span:nth-child(13)
+ {
+   animation-delay: 3s;
+ }
+ h3 span:nth-child(14)
+ {
+   animation-delay: 3.25s;
+ }
+ h3 span:nth-child(15)
+ {
+   animation-delay: 3.5s;
+ }
+ h3 span:nth-child(16)
+ {
+   animation-delay: 3.75s;
+ }
+ h3 span:nth-child(17)
+ {
+   animation-delay: 4s;
+ }
+
+ @keyframes animate{
+     0%,100%{
+        color:rgb(90, 73, 250);
+        filter:blur(2px);
+        box-shadow: none;
+       text-shaodw:0 0 10px rgb(90, 73, 250),
+       0 0 20px rgb(82, 66, 226),
+       0 0 40px rgb(69, 55, 192),
+       0 0 80px rgb(63, 51, 177),
+       0 0 120px rgb(53, 43, 150),
+       0 0 200px rgb(43, 35, 121),
+       0 0 300px rgb(30, 24, 82),
+       0 0 400px rgb(25, 20, 71);
+     }
+     5%,95%{
+      color:#111;
+      filter:blur(0px);
+      text-shadow:none;
+      box-shadow: none;
+
+ }
+}
