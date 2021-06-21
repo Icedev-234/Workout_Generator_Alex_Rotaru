@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
 
  
 $db=mysqli_connect('localhost','root','','user') or die("Could not connect to datebase...");
@@ -64,6 +65,7 @@ if(isset($_POST['List']))
 
       echo "<br>";
       print "<h2>".json_encode($jsonData)."<h2>"; 
+
       mysqli_close($db);
       }
     
