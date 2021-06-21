@@ -28,6 +28,15 @@
             'reference' => '3c2d70f2e64e2922345e89f2ceae47d2463faae1',
             'dev_requirement' => false,
         ),
+        'fpdf/fpdf' => array(
+            'pretty_version' => '1.83.1',
+            'version' => '1.83.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../fpdf/fpdf',
+            'aliases' => array(),
+            'reference' => '9a27abfd0a8e72ef690e94f3d5efc862541a3ff2',
+            'dev_requirement' => false,
+        ),
         'mpdf/mpdf' => array(
             'pretty_version' => 'v8.0.11',
             'version' => '8.0.11.0',

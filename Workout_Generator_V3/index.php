@@ -55,8 +55,6 @@
             <span>r</span>
         </h3>
 
-         
-
         <div class="col">
  
             <!-- where prompt / messages will appear -->

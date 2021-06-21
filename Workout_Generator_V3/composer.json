@@ -1,7 +1,8 @@
 {
     "require": {
         "firebase/php-jwt": "^5.3",
-        "mpdf/mpdf": "^8.0"
+        "mpdf/mpdf": "^8.0",
+        "fpdf/fpdf": "^1.83"
     }
     
 }

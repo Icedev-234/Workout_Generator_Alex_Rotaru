@@ -25,6 +25,7 @@ class ComposerStaticInit2ef6300ca109e3b100409f933c6e47ab
         ),
         'F' => 
         array (
+            'Fpdf\\' => 5,
             'Firebase\\JWT\\' => 13,
         ),
         'D' => 
@@ -45,6 +46,10 @@ class ComposerStaticInit2ef6300ca109e3b100409f933c6e47ab
         'Mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
+        ),
+        'Fpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fpdf/fpdf/src/Fpdf',
         ),
         'Firebase\\JWT\\' => 
         array (

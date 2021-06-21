@@ -1,13 +1,14 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
- 
 $db=mysqli_connect('localhost','root','','user') or die("Could not connect to datebase...");
 
 if(isset($_POST['List']))
   {   
 
-    
+    $pdf = new FPDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial', 'B', 10);
       $username=mysqli_real_escape_string($db,$_POST['username']);
       $Pass=mysqli_real_escape_string($db,$_POST['password']);
       $Email=mysqli_real_escape_string($db,$_POST['email']);
@@ -59,6 +60,7 @@ if(isset($_POST['List']))
       $mail=$row['email'];
       $jsonData[] = array('ID'=>$id,'username'=>$user,'email'=>$mail);
       $top++;
+
 
       }
       echo "</table>";
