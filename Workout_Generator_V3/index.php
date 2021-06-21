@@ -11,7 +11,34 @@
  
     </head>
 <body>
- 
+    <div class="spinner">
+    <section>
+     <div class='loader'>
+         <span style="--i:1;"></span>
+         <span style="--i:2;"></span>
+         <span style="--i:3;"></span>
+         <span style="--i:4;"></span>
+         <span style="--i:5;"></span>
+         <span style="--i:6;"></span>
+         <span style="--i:7;"></span>
+         <span style="--i:1;"></span>
+         <span style="--i:9;"></span>
+         <span style="--i:10;"></span>
+         <span style="--i:11;"></span>
+         <span style="--i:12;"></span>
+         <span style="--i:13;"></span>
+         <span style="--i:14;"></span>
+         <span style="--i:15;"></span>
+         <span style="--i:16;"></span>
+         <span style="--i:17;"></span>
+         <span style="--i:18;"></span>
+         <span style="--i:19;"></span>
+         <span style="--i:20;"></span>
+         <span style="--i:21;"></span>
+     </div>
+
+    </section> 
+    </div>
     <nav>
         <div class="topnav">
           <a href="#" id='home'">Home</a>
@@ -73,6 +100,11 @@ table {
 
 th,td{
   font-size:2em;
+  color:#111;
+}
+
+h2{
+  color:#111;
 }
             </style>
             <?php include('userlist.php') ?>
@@ -133,6 +165,7 @@ th,td{
      ?>
             </div>
             
+            
                 
 
         </div>
@@ -142,7 +175,7 @@ th,td{
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="./script.js">
-
+  
 </script>
  
 </body>

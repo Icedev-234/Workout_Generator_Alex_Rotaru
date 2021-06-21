@@ -33,9 +33,10 @@ if(isset($_POST['List']))
       
       $sql="SELECT * FROM logged_user ORDER BY activity DESC";
       $result=mysqli_query($db,$sql);
-      
+      $top=1;
       echo "<table border='1'>
       <tr>
+      <th>Nr.</th>
       <th>Id</th>
       <th>Username</th>
       <th>Email</th>
@@ -45,16 +46,24 @@ if(isset($_POST['List']))
       while($row = mysqli_fetch_array($result))
       {
       echo "<tr>";
+      echo "<td>" . $top . "</td>";
       echo "<td>" . $row['ID'] . "</td>";
       echo "<td>" . $row['username'] . "</td>";
       echo "<td>" . $row['email'] . "</td>";
       echo "<td>" . $row['activity'] . "</td>";
       echo "</tr>";
-      $jsonData[] = $row;
+
+      $id=$row['ID'];
+      $user=$row['username'];
+      $mail=$row['email'];
+      $jsonData[] = array('ID'=>$id,'username'=>$user,'email'=>$mail);
+      $top++;
 
       }
       echo "</table>";
-      echo json_encode($jsonData);  
+
+      echo "<br>";
+      print "<h2>".json_encode($jsonData)."<h2>"; 
       mysqli_close($db);
       }
     
